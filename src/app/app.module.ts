@@ -9,7 +9,11 @@ import { IntegrantesComponent } from './integrantes/integrantes.component';
 
 
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+//servicios
+import { SumaService } from './servicios/suma.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,17 +21,21 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     NavbarComponent,
     CardaDeDatosComponent,
-    IntegrantesComponent
+    IntegrantesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      //{ path: '', component: AppComponent },
+    NgbModule.forRoot(),
+    RouterModule.forRoot([      
+      { path: '', component: HomeComponent },      
       { path: 'carga_de_datos', component: CardaDeDatosComponent },      
       { path: 'integrantes', component: IntegrantesComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    SumaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

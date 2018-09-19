@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { delay } from 'q';
+
 
 @Injectable()
 export class SumaService {
-
  
-  constructor() { }
+  constructor() {    
+  }
 
+  
   Adding(total: number){    
     let total2: number;
     return new Promise(resolve => {          
@@ -18,11 +19,9 @@ export class SumaService {
         }
         setTimeout(() => {
           resolve(total);
-        }, 10000);
-                
+        }, 10000);                
     });
   }
-
  
 }
 

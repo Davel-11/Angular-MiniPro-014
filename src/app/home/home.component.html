@@ -18,6 +18,28 @@
   <thead>
     <tr >
       <th scope="col">ID</th>
+      <th scope="col">Procesos Lectura</th>         
+      <th scope="col">Estado Proceso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proceso of procesos">      
+      <td>{{ proceso.id  }}</td>
+      <td>{{ proceso.name  }}</td>
+      <td>
+        <div *ngIf="proceso.name==='multiplicacion'">
+          <button (click)=getValueWithAsync2() ></button>
+          {{ proceso.name  }}
+        </div>      
+      </td>      
+  </tbody>
+</table>
+
+<hr>
+<table class="table table-bordered" style="max-width: 1000px;" style="text-align: center" >
+  <thead>
+    <tr >
+      <th scope="col">ID</th>
       <th scope="col">Procesos Pendientes</th>         
     </tr>
   </thead>
@@ -28,3 +50,4 @@
     </tr>        
   </tbody>
 </table>
+

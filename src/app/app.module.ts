@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardaDeDatosComponent } from './carda-de-datos/carda-de-datos.component';
@@ -14,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //servicios
 import { SumaService } from './servicios/suma.service';
 import { HomeComponent } from './home/home.component';
+
+
 
 
 @NgModule({
@@ -38,4 +39,10 @@ import { HomeComponent } from './home/home.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {
+  
+  
+
+}

@@ -1,0 +1,17 @@
+[{
+    "id": "P1",
+    "name": "suma"    
+ },
+ {
+    "id": "P2",
+    "name": "resta"    
+ },
+ {
+    "id": "P3",
+    "name": "divicion"    
+ },
+ {
+    "id": "P4",
+    "name": "multiplicacion"    
+ }
+]

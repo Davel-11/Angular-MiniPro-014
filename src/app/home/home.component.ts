@@ -35,20 +35,40 @@ export class HomeComponent implements OnInit {
               this.procesoId = this.procesos[j].id;
               this.procesoActual = this.procesos[j].name;
               this.procesoInicio = this.procesos[j].valorInicio; 
-              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,this.procesoResultado);                                    
-              this.procesoResultado = <number>await this.Adding(this.procesoInicio);                           
+              this.procesoResultado = 0; 
               this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,this.procesoResultado);
+                            
+              this.procesoResultado = <number>await this.Adding(this.procesoInicio);              
             }
-
             
-
-            if(this.procesos[j].name === 'resta'){
+            if(this.procesos[j].name === 'resta'){  
               this.procesoId = this.procesos[j].id;
               this.procesoActual = this.procesos[j].name;
               this.procesoInicio = this.procesos[j].valorInicio; 
-              this.procesoResultado = this.removing(this.procesoInicio);
-             
+              this.procesoResultado = 0; 
               this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,this.procesoResultado);
+                            
+              this.procesoResultado = <number>await this.Removing(this.procesoInicio);      
+            }
+
+            if(this.procesos[j].name === 'divicion'){  
+              this.procesoId = this.procesos[j].id;
+              this.procesoActual = this.procesos[j].name;
+              this.procesoInicio = this.procesos[j].valorInicio; 
+              this.procesoResultado = 0; 
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,this.procesoResultado);
+                            
+              this.procesoResultado = <number>await this.div(this.procesoInicio);      
+            }
+
+            if(this.procesos[j].name === 'multiplicacion'){  
+              this.procesoId = this.procesos[j].id;
+              this.procesoActual = this.procesos[j].name;
+              this.procesoInicio = this.procesos[j].valorInicio; 
+              this.procesoResultado = 0; 
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,this.procesoResultado);
+                            
+              this.procesoResultado = <number>await this.times(this.procesoInicio);      
             }
       }
   }
@@ -58,10 +78,11 @@ export class HomeComponent implements OnInit {
 
   Adding(total){        
     return new Promise(resolve => {          
-        for (let i=1; i < 5; i++ ){
+        for (let i=0; i < 5; i++ ){
           setTimeout(() => {
-              total =7+total;     
-              console.log(total);                  
+              total =total+7;     
+              console.log(total); 
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,total);                 
           },i*1000);           
         }
         setTimeout(() => {
@@ -71,14 +92,50 @@ export class HomeComponent implements OnInit {
   }
     
     
-    removing(total){                 
-      for (let i=1; i < 5; i++ ){        
-        //setTimeout(() => {
-            total = 7 - total;                          
-        //},i*1000);       
-      }
-      return total;                   
-    } 
+  Removing(total){        
+    return new Promise(resolve => {          
+        for (let i=0; i < 5; i++ ){
+          setTimeout(() => {
+              total =total-7;     
+              console.log(total);  
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,total);                  
+          },i*1000);           
+        }
+        setTimeout(() => {
+          resolve(total);
+        }, 5000);                
+    });
+  }
+   
+  times(total){        
+    return new Promise(resolve => {          
+        for (let i=0; i < 5; i++ ){
+          setTimeout(() => {
+              total =total*7;     
+              console.log(total);  
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,total);                  
+          },i*1000);           
+        }
+        setTimeout(() => {
+          resolve(total);
+        }, 5000);                
+    });
+  }
+
+  div(total){        
+    return new Promise(resolve => {          
+        for (let i=0; i < 5; i++ ){
+          setTimeout(() => {
+              total =total/7;     
+              console.log(total);  
+              this.ngAfterViewInit(this.procesoId,this.procesoActual,this.procesoInicio,total);                  
+          },i*1000);           
+        }
+        setTimeout(() => {
+          resolve(total);
+        }, 5000);                
+    });
+  }
  
 
     @ViewChild('proId') proId;
@@ -93,4 +150,6 @@ export class HomeComponent implements OnInit {
       this.proInicial.nativeElement.value = proInicial ;
       this.proFinal.nativeElement.value = proFinal ;
     }
+
+    
 }

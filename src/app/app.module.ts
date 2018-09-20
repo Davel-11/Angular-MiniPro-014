@@ -14,7 +14,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SumaService } from './servicios/suma.service';
 import { HomeComponent } from './home/home.component';
 
-
+//ngmodel
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([      
       { path: '', component: HomeComponent },      

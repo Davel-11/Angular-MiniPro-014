@@ -1,46 +1,22 @@
-<p>
-  Gestor de Procesos
-</p>
+<p>Gestor de Procesos</p>
 
-
-<button      
-      class="btn btn-default btn-success">
+<button class="btn btn-default btn-success" (click)="Validaciones()" >
       Inicio
 </button>
 
-<h4>El Proceso Actual es: {{ procesoActual }}</h4>
-<h4>El Estado del Proceso esta: {{ procesoEstado }}</h4>
-<h4>El Estado Inicial es: {{ procesoInicio }}</h4>
-<h4>El Estado Final es: {{ procesoResultado }}</h4>
-<hr>
+<h4>Proceso Id es: <output #proId >0</output></h4>
+<h4>Proceso Actual es: <output #proActual >0</output></h4>
+<h4>Estado Inicial es:  <output #proInicial >0</output> </h4>
+<h4>Estado Final es: <output #proFinal >0</output> </h4> 
 
-<table class="table table-bordered" style="max-width: 1000px;" style="text-align: center" >
-  <thead>
-    <tr >
-      <th scope="col">ID</th>
-      <th scope="col">Procesos Lectura</th>         
-      <th scope="col">Estado Proceso</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let proceso of procesos">      
-      <td>{{ proceso.id  }}</td>
-      <td>{{ proceso.name  }}</td>
-      <td>
-        <div *ngIf="proceso.name==='multiplicacion'">
-          <button (click)=getValueWithAsync2() ></button>
-          {{ proceso.name  }}
-        </div>      
-      </td>      
-  </tbody>
-</table>
+<hr>
 
 <hr>
 <table class="table table-bordered" style="max-width: 1000px;" style="text-align: center" >
   <thead>
     <tr >
       <th scope="col">ID</th>
-      <th scope="col">Procesos Pendientes</th>         
+      <th scope="col">Lista Procesos</th>         
     </tr>
   </thead>
   <tbody>

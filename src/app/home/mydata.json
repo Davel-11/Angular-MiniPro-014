@@ -1,17 +1,21 @@
 [{
     "id": "P1",
-    "name": "suma"    
+    "name": "suma",
+	"valorInicio": 5    	
  },
  {
     "id": "P2",
-    "name": "resta"    
+    "name": "resta",
+	"valorInicio": 6
  },
  {
     "id": "P3",
-    "name": "divicion"    
+    "name": "divicion",
+	"valorInicio": 7
  },
  {
     "id": "P4",
-    "name": "multiplicacion"    
+    "name": "multiplicacion",
+	"valorInicio": 8
  }
 ]
